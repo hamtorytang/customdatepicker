@@ -1,0 +1,72 @@
+body{
+    height:500px;
+}
+.container{
+    display:flex;
+    height:inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 130px;
+}
+.calender{
+    display:flex;
+    height:250px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.container2{
+    margin-right:20px;
+    text-align: center;
+}
+.container3{
+    
+    text-align: center;
+}
+button{
+    
+    font-size:20px;
+}
+
+.prev-month .activate{
+    background-color:teal;
+}
+
+
+.next-month .activate1{
+    background-color:teal;
+}
+
+.prev-month table{
+    display: table;
+    box-sizing:border-box;
+    width:100%;
+    border-collapse: separate;
+    border: 1px solid pink;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.exceptions{
+    color:red;
+}
+
+.container4{
+    margin-top: 30px;
+}
+.next-month table{
+    display: table;
+    box-sizing:border-box;
+    width:100%;
+    border-collapse: separate;
+    border: 1px solid pink;
+    text-align: center;
+    margin-top:10px;
+}
+
+#exp-year, #exp-month, #exp-year1, #exp-month1{
+    font-size: 25px;
+    color:skyblue;
+}
