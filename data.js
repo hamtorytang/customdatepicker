@@ -51,7 +51,7 @@ var strStartDate = null;
 var strEndDate = null;
 
 
-//날짜위에 마우스 올리면 영역표시를 해줌
+//날짜위에 마우스를 올리면 영역표시를 해줌
 function mousy(e){
     var x = e.currentTarget;
     x.style = "background-color:grey";
