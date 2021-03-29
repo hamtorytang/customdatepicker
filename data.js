@@ -51,14 +51,14 @@ var strStartDate = null;
 var strEndDate = null;
 
 
-
+//날짜위에 마우스 올리면 영역표시를 해줌
 function mousy(e){
     var x = e.currentTarget;
     x.style = "background-color:grey";
     setTimeout(function(){x.style = "background-color:none";},300);
 }
 
-
+//왼쪽 달력위의 날짜를 클릭하면 활성화됨
 function clicker(e){
     ++clickcount;
     var curr = e.currentTarget;
@@ -192,6 +192,7 @@ function clicker(e){
     
 }
 
+//오른쪽 달력위의 날짜를 클릭하면 활성화됨
 function clicker1(e){
     ++clickcount;
     var curr = e.currentTarget;
@@ -380,6 +381,7 @@ function clicker1(e){
         
 }
 
+//PREVIOUS 버튼을 누르면 활성화됨
 function myFunctionpre(){
     
     for(let i = 0; i < 6; ++i)
@@ -401,6 +403,7 @@ function myFunctionpre(){
     Calendershownext(nextfirst);
 }
 
+//NEXT 버튼을 누르면 활성화됨
 function myFunctionnext(){
     
     for(let i = 100; i < 106; ++i)
@@ -423,7 +426,7 @@ function myFunctionnext(){
     Calendershowprev(firstday1);
 }
 
-
+//왼쪽 달력을 표시해줌
 function Calendershowprev(someday){
     var weekcount = 0;
     var daycount = 1;
@@ -533,7 +536,7 @@ function Calendershowprev(someday){
     
 }
 
-
+//오른쪽 달력을 표시해줌
 function Calendershownext(someday){
     var weekcount = 100;
     var daycount = 1;
