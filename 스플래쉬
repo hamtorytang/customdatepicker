@@ -1,0 +1,17 @@
+<View style={styles.root}>
+    <Text style={styles.Text}>Simsimi</Text>
+    <Image style={styles.image} source={require('./images/.      simsimi.png')}/>
+</View>
+
+const styles = StyleSheet.create({
+root: {
+  alignItems: 'center',
+},
+Text:{
+  fontSize:50,
+  marginTop:200,
+},
+image:{
+  marginTop:100,
+}
+}) 
