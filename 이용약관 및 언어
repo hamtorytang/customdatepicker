@@ -1,0 +1,220 @@
+const LoginScreen = () => {
+
+  // const [modal, setModal] = useState([true]);
+  // const [ag, setAg] = useState([true,<Text style={styles.modalText}>
+  //   SimSimi Policy on Rights and Responsibilities
+  //   SimSimi Policy on Rights and Responsibilities
+  //
+  //   These rights and responsibilities policies are the terms of service("Statement," "Terms," or "SRR") that govern our relationship with users and non-users of the SimSimi Service("SimSimi", "Service" or "SimSimi Service"). By using the SimSimi Service and accessing the SimSimi Service, you agree to this policy.
+  //
+  //   1. Age Restriction
+  //   You will not use SimSimi if you are under 13.
+  //
+  //   2. Content Regulation
+  //   2.1. You may not post any of the following content to SimSimi(through the publishing functions, such as talking and teaching).
+  //   2.1.1. Content that depicts explicit sex acts.
+  //   2.1.2. Content that depicts or encourages excessive violence or other dangerous conduct.
+  // </Text> ]);
+  // const [lang, setlang] = useState([true,<Text style={styles.modalText}>
+  //   언어선택
+  // </Text>]);
+
+  const [lang, setLang] = useState(
+    <View style={styles.middle}>
+      <Text style={styles.modalText}>
+        SimSimi Policy on Rights and Responsibilities
+        SimSimi Policy on Rights and Responsibilities
+
+        These rights and responsibilities policies are the terms of service("Statement," "Terms," or "SRR") that govern our relationship with users and non-users of the SimSimi Service("SimSimi", "Service" or "SimSimi Service"). By using the SimSimi Service and accessing the SimSimi Service, you agree to this policy.
+
+        1. Age Restriction
+        You will not use SimSimi if you are under 13.
+
+        2. Content Regulation
+        2.1. You may not post any of the following content to SimSimi(through the publishing functions, such as talking and teaching).
+        2.1.1. Content that depicts explicit sex acts.
+        2.1.2. Content that depicts or encourages excessive violence or other dangerous conduct.
+      </Text>
+    </View>
+    )
+
+  const [visi,setVisi] = useState(
+    <>
+      <View style={{flexDirection: 'row', paddingBottom:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+      <View style={styles.buttom}>
+        <Pressable
+          style={[styles.button, styles.buttonClose]}
+          visible={false}
+          onPress={()=>checkContent()}>
+          <Text style={styles.textStyle}>이용약관동의</Text>
+        </Pressable>
+      </View>
+    </>
+  );
+
+  const [check, setCheck] = useState(<></>);
+
+  const checkContent = () => {setLang(
+    <>
+      <TouchableOpacity onPress={()=>setCheck(<Icon name={'checkmark'} size={20}/>)} style={{flexDirection:'row', alignItems:'center'}}>
+        {check}
+        <Text style={{padding:'5%'}}>영어</Text>
+      </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+      <TouchableOpacity>
+      <Text style={{padding:'5%'}}>한국어</Text>
+      </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+        <TouchableOpacity>
+      <Text style={{padding:'5%'}}>중국어</Text>
+        </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+          <TouchableOpacity>
+      <Text style={{padding:'5%'}}>베트남어</Text>
+          </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+            <TouchableOpacity>
+      <Text style={{padding:'5%'}}>와칸다어</Text>
+            </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+              <TouchableOpacity>
+      <Text style={{padding:'5%'}}>우간다어</Text>
+              </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+                <TouchableOpacity>
+      <Text style={{padding:'5%'}}>딩가오</Text>
+                </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+      <TouchableOpacity>
+      <Text style={{padding:'5%'}}>스페인어</Text>
+      </TouchableOpacity>
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+                  <TouchableOpacity>
+      <Text style={{padding:'5%'}}>터키어</Text>
+                  </TouchableOpacity>
+
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+                    <TouchableOpacity>
+      <Text style={{padding:'5%'}}>인도네시아어</Text>
+                    </TouchableOpacity>
+
+      <View style={{flexDirection: 'row', padding:'0%'}}>
+        <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+      </View>
+                      <TouchableOpacity>
+      <Text style={{padding:'5%'}}>포트투갈어</Text>
+                      </TouchableOpacity>
+
+    </>
+
+), setVisi(<></>);
+  };
+
+
+  return (
+    <SafeAreaProvider>
+      <View>
+        <Modal
+          animationType="slide"
+          transparent={true}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <View style={styles.top}>
+                <Text
+                  style={{flex: 13, textAlign: 'center', paddingLeft: '5%'}}>
+                  이용약관
+                </Text>
+                <Icon name="close" size={24} style={{ flex:1 }}/>
+              </View>
+              <View style={{flexDirection: 'row', paddingBottom:'0%'}}>
+                <View style={{backgroundColor: 'black', height: 1, flex: 1, alignSelf: 'center'}} />
+              </View>
+              {lang}
+              {visi}
+            </View>
+          </View>
+        </Modal>
+      </View>
+    </SafeAreaProvider>
+
+  );
+};
+
+
+const styles = StyleSheet.create({
+  centeredView: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+    flex:1
+  },
+  top:{
+    borderColor:'black',
+    padding:20,
+    flexDirection:"row",
+    alignItems:"center",
+  },
+  middle: {
+    padding:10,
+    width:'100%',
+  },
+  buttom: {
+    padding:10,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+    fontFamily:"cochin",
+  }
+});
