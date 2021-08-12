@@ -1,0 +1,160 @@
+
+import React, {Component} from 'react';
+import {Modal, Pressable} from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
+
+interface Props {}
+interface State {
+  blogs: [
+    {
+      id: number;
+      data: string;
+    },
+    {
+      id: number;
+      data: string;
+    },
+    {
+      id: number;
+      data: string;
+    },
+    {
+      id: number;
+      data: string;
+    },
+  ],
+  modalVisible: boolean,
+  realData:string,
+}
+
+export default class App extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      blogs: [
+        {
+          id: 1,
+          data: '나만의 심심이',
+        },
+        {
+          id: 2,
+          data: '마음대로 설정',
+        },
+        {
+          id: 3,
+          data: '나만의 챗봇',
+        },
+        {
+          id: 4,
+          data: '나의 심심이',
+        },
+      ],
+      modalVisible: false,
+      realData:''
+    };
+  }
+
+  componentDidMount() {
+    this.setState({realData:this.state.blogs[0].data})
+  }
+
+  timeOut(k){
+    let k1 = setInterval(() => {
+    if(k===3)
+     clearInterval(k1);
+
+      this.setState({ realData: this.state.blogs[k]?.data })
+      console.log(k);
+      k++;
+    }
+    , 1000);
+    k1;
+  }
+
+  setModalVisible = (visible) => {
+    this.setState({ modalVisible: visible });
+  }
+  render() {
+    return (
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.modalVisible}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>{this.state.realData}</Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={()=>this.timeOut(0)}
+                // onPress={() => this.setModalVisible(!this.state.modalVisible)}
+              >
+                <Text style={styles.textStyle}>Hide Modal</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+        <Pressable
+          style={[styles.button, styles.buttonOpen]}
+          onPress={() => this.setModalVisible(true)}
+        >
+          <Text style={styles.textStyle}>Show Modal</Text>
+        </Pressable>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  }
+});
+
